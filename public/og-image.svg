@@ -1,0 +1,22 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0F172A"/>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <circle cx="990" cy="110" r="95" fill="#D99A25" opacity=".26"/>
+  <rect x="760" y="145" width="250" height="340" rx="8" fill="#F8FAFC" opacity=".92"/>
+  <rect x="815" y="205" width="58" height="70" rx="6" fill="#0F766E" opacity=".58"/>
+  <rect x="900" y="205" width="58" height="70" rx="6" fill="#0F766E" opacity=".58"/>
+  <rect x="815" y="310" width="58" height="70" rx="6" fill="#0F766E" opacity=".58"/>
+  <rect x="900" y="310" width="58" height="70" rx="6" fill="#0F766E" opacity=".58"/>
+  <path d="M850 500C860 435 902 395 970 380C962 452 920 492 850 500Z" fill="#A7F3D0"/>
+  <text x="80" y="210" fill="#ECFDF5" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="62" font-weight="800">ABRAMS ECO</text>
+  <text x="80" y="285" fill="#ECFDF5" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="45" font-weight="700">PROFESSIONAL 2020</text>
+  <text x="80" y="375" fill="#D1FAE5" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="30" font-weight="500">Професионално управљање стамбеним заједницама</text>
+  <text x="80" y="425" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="26">Смедерево | 069 747 303</text>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#064E3B"/>
+      <stop offset=".65" stop-color="#0F766E"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+  </defs>
+</svg>
