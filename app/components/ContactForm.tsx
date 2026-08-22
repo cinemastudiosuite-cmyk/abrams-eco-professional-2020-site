@@ -38,10 +38,12 @@ function validate(values: FormState) {
   return errors;
 }
 
+type SubmitStatus = "idle" | "sending" | "sent" | "failed";
+
 export function ContactForm() {
   const [values, setValues] = useState<FormState>(initialState);
   const [errors, setErrors] = useState<FormErrors>({});
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<SubmitStatus>("idle");
 
   const mailtoHref = useMemo(() => {
     const body = [
@@ -63,11 +65,25 @@ export function ContactForm() {
     }
   }
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const nextErrors = validate(values);
     setErrors(nextErrors);
-    setSubmitted(Object.keys(nextErrors).length === 0);
+    if (Object.keys(nextErrors).length > 0) {
+      return;
+    }
+
+    setStatus("sending");
+    try {
+      const response = await fetch("/api/kontakt", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+      setStatus(response.ok ? "sent" : "failed");
+    } catch {
+      setStatus("failed");
+    }
   }
 
   return (
@@ -163,10 +179,11 @@ export function ContactForm() {
       <div className="flex flex-col gap-3 sm:flex-row">
         <button
           type="submit"
-          className="inline-flex items-center justify-center gap-2 rounded-lg bg-emerald-700 px-5 py-3 font-semibold text-white transition hover:bg-emerald-800"
+          disabled={status === "sending"}
+          className="inline-flex items-center justify-center gap-2 rounded-lg bg-emerald-700 px-5 py-3 font-semibold text-white transition hover:bg-emerald-800 disabled:cursor-not-allowed disabled:opacity-70"
         >
           <Icon name="mail" className="h-4 w-4" />
-          Пошаљи поруку
+          {status === "sending" ? "Шаљем..." : "Пошаљи поруку"}
         </button>
         <a
           href={company.phoneHref}
@@ -177,17 +194,27 @@ export function ContactForm() {
         </a>
       </div>
 
-      {submitted && (
+      {status === "sent" && (
         <div
           role="status"
           className="rounded-lg border border-emerald-200 bg-emerald-50 p-4 text-sm leading-7 text-emerald-950"
         >
-          Форма је успешно проверена. Пошто сајт нема backend, пошаљите
-          припремљену поруку преко email клијента:
+          Порука је примљена. Јавићемо се на наведени контакт у најкраћем
+          могућем року.
+        </div>
+      )}
+
+      {status === "failed" && (
+        <div
+          role="status"
+          className="rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm leading-7 text-amber-950"
+        >
+          Порука тренутно није могла да буде послата преко сајта. Молимо
+          пошаљите је директно преко email клијента:
           <a className="ml-1 font-semibold underline" href={mailtoHref}>
             отвори email
           </a>
-          .
+          , или нас позовите.
         </div>
       )}
     </form>

@@ -50,7 +50,7 @@ export default function WhyUsPage() {
           <div className="reveal-on-scroll overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
             <Image
               src="/placeholder-tim.svg"
-              alt="Placeholder за фотографију тима или радова на одржавању зграде"
+              alt="Стилизована илустрација тима на одржавању зграде"
               width={1200}
               height={900}
               sizes="(min-width: 1024px) 50vw, 100vw"

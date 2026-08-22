@@ -46,7 +46,7 @@ export default function AboutPage() {
           <div className="reveal-on-scroll overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
             <Image
               src="/placeholder-upravnik.svg"
-              alt="Placeholder за професионалну фотографију управника Александра Абрамовића"
+              alt="Стилизована ознака професионалног управника Александра Абрамовића"
               width={1000}
               height={1200}
               sizes="(min-width: 1024px) 45vw, 100vw"
