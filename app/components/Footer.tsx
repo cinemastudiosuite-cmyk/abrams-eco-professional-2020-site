@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { company, navItems, secondaryLinks } from "../lib/content";
 import { Icon } from "./Icon";
 
@@ -7,8 +8,15 @@ export function Footer() {
       <div className="site-container grid gap-10 py-12 md:grid-cols-[1.3fr_0.8fr_0.9fr]">
         <div>
           <div className="flex items-center gap-3">
-            <span className="grid h-11 w-11 place-items-center rounded-lg bg-emerald-500/15 text-emerald-300">
-              <Icon name="leaf" className="h-6 w-6" />
+            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-emerald-500/15 p-1.5">
+              <Image
+                src="/brand/abrams-mark.png"
+                alt=""
+                width={64}
+                height={64}
+                unoptimized
+                className="h-full w-full object-contain"
+              />
             </span>
             <div>
               <p className="font-semibold">{company.name}</p>
