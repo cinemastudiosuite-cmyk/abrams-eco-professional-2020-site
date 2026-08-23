@@ -1,6 +1,6 @@
 <svg width="1000" height="1200" viewBox="0 0 1000 1200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">Placeholder портрет управника</title>
-  <desc id="desc">Место за професионалну фотографију управника.</desc>
+  <title id="title">Стилизована ознака професионалног управника</title>
+  <desc id="desc">Апстрактна ознака, привремено решење до стварне фотографије управника.</desc>
   <rect width="1000" height="1200" fill="#EEF7F1"/>
   <circle cx="500" cy="380" r="175" fill="#0F766E" opacity=".18"/>
   <circle cx="500" cy="330" r="105" fill="#D9E7DF"/>
@@ -9,5 +9,4 @@
   <path d="M500 650C430 715 400 800 390 900H610C600 800 570 715 500 650Z" fill="#ECFDF5" opacity=".88"/>
   <path d="M365 520C310 560 260 630 230 715" stroke="#0F766E" stroke-width="16" stroke-linecap="round" opacity=".45"/>
   <path d="M635 520C690 560 740 630 770 715" stroke="#0F766E" stroke-width="16" stroke-linecap="round" opacity=".45"/>
-  <text x="92" y="1080" fill="#064E3B" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="42" font-weight="700">PLACEHOLDER: фотографија управника</text>
 </svg>

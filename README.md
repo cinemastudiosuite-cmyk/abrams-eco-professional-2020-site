@@ -8,8 +8,8 @@
 - React + vinext/Next app структура
 - Vite build за Cloudflare Worker/Sites deploy
 - Tailwind CSS
-- Статички сајт без backend-а
-- SEO metadata, Open Graph, `robots.txt`, `sitemap.xml` и LocalBusiness schema
+- Контакт форма чува упите у Cloudflare D1 (`app/api/kontakt/route.ts`, `db/schema.ts`) — није чисто статичан сајт
+- SEO metadata, Open Graph, `robots.txt`, `sitemap.xml`, `LocalBusiness` и `FAQPage` schema
 
 ## Покретање локално
 
@@ -36,15 +36,31 @@ Build производи Sites/Cloudflare Worker компатибилан `dist/
 `.openai/hosting.json`.
 
 За класичан Vercel или Netlify deploy користите исти садржај и компоненте, али
-покрените га као стандардни Next/Vite пројекат на њиховој платформи. Пре јавног
-објављивања замените placeholder слике у `public/` стварним фотографијама и
-подесите `NEXT_PUBLIC_SITE_URL` на финални домен.
+покрените га као стандардни Next/Vite пројекат на њиховој платформи — контакт
+форма тада захтева другачији backend јер D1 постоји само на Cloudflare/OpenAI
+Sites hosting-у.
 
-## Садржај који треба заменити пре објаве
+### Укључивање D1 базе за контакт форму
 
-- `public/placeholder-hero.svg`
-- `public/placeholder-zgrada.svg`
-- `public/placeholder-upravnik.svg`
-- `public/placeholder-tim.svg`
-- пример утиске клијената у `app/lib/content.ts`
-- `NEXT_PUBLIC_SITE_URL` у runtime окружењу када домен буде познат
+`.openai/hosting.json` већ има `"d1": "DB"`. Пре првог deploy-а:
+
+```bash
+npm run db:generate
+```
+
+Ово генерише SQL миграцију у `drizzle/` на основу `db/schema.ts` (табела
+`leads`). Control plane при deploy-у креира D1 базу везану за
+`project_id` из `.openai/hosting.json` и примењује миграцију. Локално, без
+праве D1 базе, `dev` сервер и даље ради — форма ће само пријавити грешку слања
+и понудити `mailto:` резервну опцију (уграђено у `ContactForm.tsx`).
+
+## Садржај који треба заменити пре јавне објаве
+
+- `public/placeholder-hero.svg`, `placeholder-zgrada.svg`,
+  `placeholder-upravnik.svg`, `placeholder-tim.svg` — тренутно су то
+  дорађене SVG илустрације (без "PLACEHOLDER" натписа) као привремено
+  решење; замените их стварним фотографијама чим буду доступне.
+- `company.residentPortalUrl` у `app/lib/content.ts` — поставити стварну
+  адресу Управио портала за станаре кад буде јавно доступна (тренутно
+  `null`, дугме у футеру приказује "ускоро").
+- `NEXT_PUBLIC_SITE_URL` у runtime окружењу када домен буде познат.

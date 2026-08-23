@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { company, navItems } from "../lib/content";
@@ -42,13 +43,20 @@ export function Header() {
           onClick={() => setMenuOpen(false)}
         >
           <span
-            className={`grid h-11 w-11 shrink-0 place-items-center rounded-lg border ${
+            className={`grid h-11 w-11 shrink-0 place-items-center rounded-lg border p-1.5 ${
               solid
-                ? "border-emerald-700/20 bg-emerald-50 text-emerald-800"
-                : "border-white/30 bg-white/15 text-white"
+                ? "border-emerald-700/20 bg-emerald-50"
+                : "border-white/30 bg-white/15"
             }`}
           >
-            <Icon name="leaf" className="h-6 w-6" />
+            <Image
+              src="/brand/abrams-mark.png"
+              alt=""
+              width={64}
+              height={64}
+              unoptimized
+              className="h-full w-full object-contain"
+            />
           </span>
           <span className="min-w-0 leading-tight">
             <span className="block truncate text-sm tracking-wide">

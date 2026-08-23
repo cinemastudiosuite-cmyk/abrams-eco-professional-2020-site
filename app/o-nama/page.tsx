@@ -4,7 +4,7 @@ import { CTASection } from "../components/CTASection";
 import { Icon } from "../components/Icon";
 import { PageHero } from "../components/PageHero";
 import { SectionHeader } from "../components/SectionHeader";
-import { company, pageDescriptions } from "../lib/content";
+import { pageDescriptions, referenceStats, team } from "../lib/content";
 
 export const metadata: Metadata = {
   title: "О нама",
@@ -46,7 +46,7 @@ export default function AboutPage() {
           <div className="reveal-on-scroll overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
             <Image
               src="/placeholder-upravnik.svg"
-              alt="Placeholder за професионалну фотографију управника Александра Абрамовића"
+              alt="Стилизована ознака професионалног управника стамбене заједнице"
               width={1000}
               height={1200}
               sizes="(min-width: 1024px) 45vw, 100vw"
@@ -82,11 +82,13 @@ export default function AboutPage() {
           <article className="reveal-on-scroll rounded-lg border border-slate-200 bg-white p-6">
             <Icon name="users" className="h-8 w-8 text-emerald-700" />
             <h2 className="mt-5 text-xl font-semibold text-slate-950">
-              Један поуздан контакт
+              Тим стручних управника
             </h2>
             <p className="mt-3 text-sm leading-7 text-slate-600">
-              Контакт особа је {company.contactPerson}, професионални управник
-              који прати комуникацију са станарима, извођачима и институцијама.
+              Два професионална управника, Александар Абрамовић и Милутин
+              Радивојевић, лично прате сваку сарадњу — од првог позива до
+              решеног квара — уз дугогодишње искуство у привреди, међу којима
+              и искуство у безбедности и здрављу на раду (БЗР).
             </p>
           </article>
         </div>
@@ -94,18 +96,36 @@ export default function AboutPage() {
 
       <section className="py-20">
         <div className="site-container">
-          <div className="reveal-on-scroll rounded-lg border border-emerald-200 bg-emerald-50 p-8 md:p-10">
-            <p className="text-sm font-semibold uppercase tracking-wide text-emerald-800">
-              Представљање управника
-            </p>
-            <h2 className="mt-3 text-3xl font-semibold text-slate-950">
-              Александар Абрамовић
-            </h2>
-            <p className="mt-4 max-w-3xl leading-8 text-slate-700">
-              Као контакт особа фирме {company.name}, Александар је задужен за
-              договор са стамбеним заједницама, организацију активности,
-              комуникацију и праћење договорених рокова.
-            </p>
+          <p className="reveal-on-scroll text-sm font-semibold uppercase tracking-wide text-emerald-800">
+            Представљање управника
+          </p>
+          <div className="mt-6 grid gap-6 md:grid-cols-2">
+            {team.map((member) => (
+              <div
+                key={member.name}
+                className="reveal-on-scroll rounded-lg border border-emerald-200 bg-emerald-50 p-8 md:p-10"
+              >
+                <h2 className="text-2xl font-semibold text-slate-950">
+                  {member.name}
+                </h2>
+                <p className="mt-1 text-sm font-medium text-emerald-700">
+                  {member.role}
+                </p>
+                <p className="mt-4 leading-8 text-slate-700">{member.bio}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="site-container">
+          <div className="reveal-on-scroll rounded-lg border border-slate-200 bg-slate-50 p-8 md:p-10">
+            <SectionHeader
+              eyebrow={referenceStats.eyebrow}
+              title={referenceStats.title}
+              text={referenceStats.text}
+            />
           </div>
         </div>
       </section>

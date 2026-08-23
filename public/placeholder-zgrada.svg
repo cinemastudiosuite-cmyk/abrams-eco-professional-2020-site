@@ -1,6 +1,6 @@
 <svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">Placeholder за фотографију зграде</title>
-  <desc id="desc">Место за стварну фотографију улаза или стамбене зграде.</desc>
+  <title id="title">Илустрација улаза стамбене зграде</title>
+  <desc id="desc">Стилизована илустрација зграде, привремено решење до стварних фотографија.</desc>
   <rect width="1200" height="900" fill="#F8FAFC"/>
   <rect x="90" y="80" width="1020" height="650" rx="8" fill="#E7EFEA"/>
   <rect x="170" y="150" width="250" height="580" rx="8" fill="#FFFFFF"/>
@@ -21,5 +21,4 @@
   <path d="M0 725C165 690 245 710 385 748C540 790 735 795 930 735C1035 702 1115 692 1200 705V900H0V725Z" fill="#0B3B2D"/>
   <path d="M155 755C166 675 215 632 292 613C286 696 238 743 155 755Z" fill="#A7F3D0"/>
   <path d="M910 760C920 682 968 640 1040 620C1034 700 990 748 910 760Z" fill="#A7F3D0"/>
-  <text x="80" y="835" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="35" font-weight="700">PLACEHOLDER ФОТОГРАФИЈА ЗГРАДЕ</text>
 </svg>

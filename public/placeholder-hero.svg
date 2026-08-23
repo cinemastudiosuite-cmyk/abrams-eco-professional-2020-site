@@ -1,6 +1,6 @@
 <svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">Placeholder фотографија стамбене зграде</title>
-  <desc id="desc">Илустративни placeholder за hero секцију, намењен замени стварном фотографијом зграде или улаза.</desc>
+  <title id="title">Илустрација стамбене зграде у вечерњем светлу</title>
+  <desc id="desc">Стилизована илустрација зграде, привремено решење до стварних фотографија.</desc>
   <rect width="1600" height="1000" fill="#0F172A"/>
   <rect width="1600" height="1000" fill="url(#sky)"/>
   <circle cx="1280" cy="170" r="120" fill="#D99A25" opacity=".28"/>
@@ -33,7 +33,6 @@
     <path d="M1320 795C1330 710 1385 662 1470 640C1462 730 1410 783 1320 795Z"/>
     <path d="M525 820C537 745 585 705 660 690C648 768 600 812 525 820Z"/>
   </g>
-  <text x="80" y="895" fill="#ECFDF5" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="42" font-weight="700">PLACEHOLDER: заменити стварном фотографијом зграде</text>
   <defs>
     <linearGradient id="sky" x1="0" y1="0" x2="1600" y2="1000" gradientUnits="userSpaceOnUse">
       <stop stop-color="#0F766E"/>

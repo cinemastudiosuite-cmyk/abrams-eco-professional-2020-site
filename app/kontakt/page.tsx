@@ -26,7 +26,7 @@ export default function ContactPage() {
             <SectionHeader
               eyebrow="Форма"
               title="Затражите понуду"
-              text="Форма проверава унос на сајту. Пошто нема backend-а, након провере можете послати припремљен email."
+              text="Наведите основне податке и опис ситуације — јавићемо се на контакт који оставите."
             />
             <div className="mt-8">
               <ContactForm />

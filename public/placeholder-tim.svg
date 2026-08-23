@@ -1,6 +1,6 @@
 <svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">Placeholder за тим или радове</title>
-  <desc id="desc">Место за фотографију тима, састанка са станарима или радова одржавања.</desc>
+  <title id="title">Илустрација тима и организованог рада на одржавању</title>
+  <desc id="desc">Стилизована илустрација, привремено решење до стварних фотографија тима и радова.</desc>
   <rect width="1200" height="900" fill="#F8FAFC"/>
   <rect x="95" y="95" width="1010" height="560" rx="8" fill="#E2ECE7"/>
   <rect x="170" y="170" width="300" height="410" rx="8" fill="#FFFFFF"/>
@@ -10,5 +10,4 @@
   <path d="M595 265H955M595 350H910M595 435H975M595 520H850" stroke="#0F766E" stroke-width="24" stroke-linecap="round" opacity=".45"/>
   <path d="M0 695C170 670 300 708 465 750C665 800 825 760 1015 710C1090 690 1145 682 1200 685V900H0V695Z" fill="#0B3B2D"/>
   <path d="M875 742C887 660 938 615 1018 596C1010 680 960 730 875 742Z" fill="#A7F3D0"/>
-  <text x="80" y="835" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="34" font-weight="700">PLACEHOLDER: тим, састанак или радови</text>
 </svg>

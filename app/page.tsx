@@ -10,7 +10,7 @@ import {
   metrics,
   pageDescriptions,
   services,
-  testimonials,
+  trustPoints,
 } from "./lib/content";
 
 export const metadata: Metadata = {
@@ -25,7 +25,7 @@ export default function HomePage() {
       <section className="relative isolate flex min-h-[78svh] items-center overflow-hidden bg-slate-950 pt-24 text-white">
         <Image
           src="/placeholder-hero.svg"
-          alt="Placeholder фотографија модерне стамбене зграде за замену стварном фотографијом објекта"
+          alt="Стилизована илустрација стамбене зграде"
           fill
           priority
           sizes="100vw"
@@ -33,15 +33,15 @@ export default function HomePage() {
           className="absolute inset-0 -z-20 h-full w-full object-cover"
         />
         <div className="hero-overlay absolute inset-0 -z-10" />
-        <div className="site-container py-20">
-          <div className="max-w-3xl">
+        <div className="site-container w-full min-w-0 py-20">
+          <div className="max-w-3xl min-w-0">
             <p className="text-sm font-semibold uppercase tracking-wide text-emerald-100">
               {company.tagline}
             </p>
-            <h1 className="mt-5 text-4xl font-semibold tracking-normal sm:text-5xl lg:text-6xl">
+            <h1 className="mt-5 break-words text-4xl font-semibold tracking-normal sm:text-5xl lg:text-6xl">
               Професионално управљање стамбеним заједницама у Смедереву
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-100">
+            <p className="mt-6 max-w-2xl break-words text-lg leading-8 text-slate-100">
               Поуздан управник, транспарентни извештаји, брз одзив и еко
               приступ одржавању зграда.
             </p>
@@ -100,7 +100,7 @@ export default function HomePage() {
           <div className="reveal-on-scroll overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
             <Image
               src="/placeholder-zgrada.svg"
-              alt="Placeholder за фотографију улаза или зграде којом управља фирма"
+              alt="Стилизована илустрација улаза стамбене зграде"
               width={1200}
               height={900}
               sizes="(min-width: 1024px) 52vw, 100vw"
@@ -162,26 +162,24 @@ export default function HomePage() {
       <section className="bg-white py-20">
         <div className="site-container">
           <SectionHeader
-            eyebrow="Утисци"
-            title="Како стамбене заједнице доживљавају уређено управљање"
-            text="Ово су пример утисци и треба их заменити стварним препорукама клијената пре јавног објављивања."
+            eyebrow="Поверење"
+            title="Искрено о томе где смо сада"
+            text="Сајт је нов, а сарадња са стамбеним заједницама је стварна и текућа. Утиске станара додајемо овде чим их прикупимо уз њихову сагласност — до тада, референце дајемо директно на позив."
           />
           <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {testimonials.map((testimonial) => (
-              <figure
-                key={testimonial.quote}
+            {trustPoints.map((point) => (
+              <article
+                key={point.title}
                 className="reveal-on-scroll rounded-lg border border-slate-200 bg-slate-50 p-6"
               >
-                <blockquote className="text-base leading-8 text-slate-700">
-                  “{testimonial.quote}”
-                </blockquote>
-                <figcaption className="mt-5">
-                  <p className="font-semibold text-slate-950">
-                    {testimonial.author}
-                  </p>
-                  <p className="text-sm text-slate-500">{testimonial.detail}</p>
-                </figcaption>
-              </figure>
+                <Icon name={point.icon} className="h-7 w-7 text-emerald-700" />
+                <h3 className="mt-4 text-lg font-semibold text-slate-950">
+                  {point.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600">
+                  {point.description}
+                </p>
+              </article>
             ))}
           </div>
         </div>
