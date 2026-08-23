@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { CTASection } from "../components/CTASection";
+import { Icon } from "../components/Icon";
 import { PageHero } from "../components/PageHero";
 import { SectionHeader } from "../components/SectionHeader";
 import { ServiceCard } from "../components/ServiceCard";
-import { pageDescriptions, services } from "../lib/content";
+import { pageDescriptions, partners, services } from "../lib/content";
 
 export const metadata: Metadata = {
   title: "Услуге",
@@ -62,6 +63,62 @@ export default function ServicesPage() {
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="site-container">
+          <SectionHeader
+            eyebrow="Партнери"
+            title="Проверене фирме за све око зграде"
+            text="Не радимо све сами — ослањамо се на дугогодишњу сарадњу са проверенim фирмама за специјализоване послове, тако да стамбена заједница добија комплетну услугу без тражења извођача на своју руку."
+          />
+          <div className="mt-10 grid gap-5 md:grid-cols-2">
+            {partners.map((partner) => (
+              <article
+                key={partner.name}
+                className="reveal-on-scroll rounded-lg border border-slate-200 bg-white p-6 shadow-sm"
+              >
+                <span className="grid h-11 w-11 place-items-center rounded-lg bg-emerald-50 text-emerald-700">
+                  <Icon name={partner.icon} className="h-6 w-6" />
+                </span>
+                <h3 className="mt-4 text-lg font-semibold text-slate-950">
+                  {partner.name}
+                </h3>
+                <p className="mt-1 text-sm font-medium text-emerald-700">
+                  {partner.role}
+                </p>
+                <p className="mt-3 text-sm leading-7 text-slate-600">
+                  {partner.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-emerald-950 py-20 text-white">
+        <div className="site-container grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div className="reveal-on-scroll">
+            <p className="text-sm font-semibold uppercase tracking-wide text-emerald-300">
+              Додатна понуда
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-4xl">
+              Размишљате о паметној и еколошкој згради?
+            </h2>
+            <p className="mt-4 max-w-xl leading-8 text-emerald-100">
+              Соларни панели, енергетска ефикасност и еколошки материјали —
+              повезујемо стамбену заједницу са провереним извођачима и
+              инвеститорима, увек као опцију о којој одлучује скупштина.
+            </p>
+            <a
+              href="/pametne-zgrade"
+              className="mt-7 inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 font-semibold text-emerald-900 transition hover:bg-emerald-50"
+            >
+              <Icon name="sun" className="h-4 w-4" />
+              Сазнајте више о паметним зградама
+            </a>
+          </div>
         </div>
       </section>
 

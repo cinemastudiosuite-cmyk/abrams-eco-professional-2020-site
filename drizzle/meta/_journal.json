@@ -8,6 +8,13 @@
       "when": 1787437885409,
       "tag": "0000_lethal_gladiator",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1787455372591,
+      "tag": "0001_loud_absorbing_man",
+      "breakpoints": true
     }
   ]
 }

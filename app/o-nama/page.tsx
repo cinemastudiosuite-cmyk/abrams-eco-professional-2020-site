@@ -4,7 +4,7 @@ import { CTASection } from "../components/CTASection";
 import { Icon } from "../components/Icon";
 import { PageHero } from "../components/PageHero";
 import { SectionHeader } from "../components/SectionHeader";
-import { company, pageDescriptions } from "../lib/content";
+import { company, pageDescriptions, referenceStats } from "../lib/content";
 
 export const metadata: Metadata = {
   title: "О нама",
@@ -82,11 +82,14 @@ export default function AboutPage() {
           <article className="reveal-on-scroll rounded-lg border border-slate-200 bg-white p-6">
             <Icon name="users" className="h-8 w-8 text-emerald-700" />
             <h2 className="mt-5 text-xl font-semibold text-slate-950">
-              Један поуздан контакт
+              Тим стручних управника
             </h2>
             <p className="mt-3 text-sm leading-7 text-slate-600">
               Контакт особа је {company.contactPerson}, професионални управник
-              који прати комуникацију са станарима, извођачима и институцијама.
+              који прати комуникацију са станарима, извођачима и институцијама,
+              уз подршку тима од два професионална управника са дугогодишњим
+              искуством у привреди — међу којима и искуство у безбедности и
+              здрављу на раду (БЗР).
             </p>
           </article>
         </div>
@@ -106,6 +109,18 @@ export default function AboutPage() {
               договор са стамбеним заједницама, организацију активности,
               комуникацију и праћење договорених рокова.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="site-container">
+          <div className="reveal-on-scroll rounded-lg border border-slate-200 bg-slate-50 p-8 md:p-10">
+            <SectionHeader
+              eyebrow={referenceStats.eyebrow}
+              title={referenceStats.title}
+              text={referenceStats.text}
+            />
           </div>
         </div>
       </section>
