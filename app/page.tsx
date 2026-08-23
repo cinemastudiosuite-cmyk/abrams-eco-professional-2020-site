@@ -33,15 +33,15 @@ export default function HomePage() {
           className="absolute inset-0 -z-20 h-full w-full object-cover"
         />
         <div className="hero-overlay absolute inset-0 -z-10" />
-        <div className="site-container py-20">
-          <div className="max-w-3xl">
+        <div className="site-container w-full min-w-0 py-20">
+          <div className="max-w-3xl min-w-0">
             <p className="text-sm font-semibold uppercase tracking-wide text-emerald-100">
               {company.tagline}
             </p>
-            <h1 className="mt-5 text-4xl font-semibold tracking-normal sm:text-5xl lg:text-6xl">
+            <h1 className="mt-5 break-words text-4xl font-semibold tracking-normal sm:text-5xl lg:text-6xl">
               Професионално управљање стамбеним заједницама у Смедереву
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-100">
+            <p className="mt-6 max-w-2xl break-words text-lg leading-8 text-slate-100">
               Поуздан управник, транспарентни извештаји, брз одзив и еко
               приступ одржавању зграда.
             </p>
