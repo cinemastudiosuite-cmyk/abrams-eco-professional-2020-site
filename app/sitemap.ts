@@ -10,6 +10,7 @@ const routes = [
   "/faq",
   "/promena-upravnika",
   "/pametne-zgrade",
+  "/cenovnik",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -4,7 +4,7 @@ import { Icon } from "../components/Icon";
 import { PageHero } from "../components/PageHero";
 import { SectionHeader } from "../components/SectionHeader";
 import { ServiceCard } from "../components/ServiceCard";
-import { pageDescriptions, partners, services } from "../lib/content";
+import { beforeAfter, pageDescriptions, partners, services } from "../lib/content";
 
 export const metadata: Metadata = {
   title: "Услуге",
@@ -92,6 +92,32 @@ export default function ServicesPage() {
                   {partner.description}
                 </p>
               </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-50 py-20">
+        <div className="site-container">
+          <SectionHeader
+            eyebrow={beforeAfter.eyebrow}
+            title={beforeAfter.title}
+            text={beforeAfter.text}
+          />
+          <div className="mt-10 grid gap-5 sm:grid-cols-2">
+            {["Пре", "После"].map((label) => (
+              <div
+                key={label}
+                className="reveal-on-scroll flex min-h-56 flex-col items-center justify-center rounded-lg border border-dashed border-slate-300 bg-white p-8 text-center"
+              >
+                <Icon name="sparkles" className="h-8 w-8 text-emerald-700" />
+                <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-slate-500">
+                  {label}
+                </p>
+                <p className="mt-2 max-w-xs text-sm leading-6 text-slate-500">
+                  Овде ће бити стварна фотографија чим је прикупимо.
+                </p>
+              </div>
             ))}
           </div>
         </div>
